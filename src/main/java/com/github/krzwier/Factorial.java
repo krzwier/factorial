@@ -3,19 +3,7 @@ package com.github.krzwier;
 
 import java.math.BigInteger;
 
-/**
- * Hello world!
- */
 public final class Factorial {
-
-
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
 
     public static BigInteger GetFactorial(final int input) throws IllegalArgumentException {
 

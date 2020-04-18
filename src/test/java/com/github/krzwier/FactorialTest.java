@@ -1,20 +1,20 @@
 package com.github.krzwier;
 
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class FactorialTest {
 
     void assertFactorialOfBigInteger(String expected, int input){
         BigInteger expectedBigInt = new BigInteger(expected);
-        assertEquals(expectedBigInt,Factorial.GetFactorial(input));
+        assertEquals(expectedBigInt, Factorial.GetFactorial(input));
     }
 
     void assertFactorialOfBigInteger(int expected, int input){
@@ -59,7 +59,7 @@ class FactorialTest {
     @DisplayName("It should throw exception with message about valid values when input is -1")
     void Factorial_InputNeg1_ThrowsExceptionWithMessage() {
         Exception e = assertThrows(IllegalArgumentException.class, () -> Factorial.GetFactorial(-1));
-        Pattern p = Pattern.compile(".*non-negative.*",Pattern.CASE_INSENSITIVE);
+        Pattern p = Pattern.compile(".*non-negative.*", Pattern.CASE_INSENSITIVE);
 
         assertTrue(p.matcher(e.getMessage()).matches(),"Illegal Argument Exception message for non-negative numbers does not match.");
     }
@@ -76,7 +76,7 @@ class FactorialTest {
     @DisplayName("It should throw exception with message about valid values when input greater than 100")
     void Factorial_InputGreaterThan100_ThrowsExceptionWithMessage() {
         Exception e = assertThrows(IllegalArgumentException.class, () -> Factorial.GetFactorial(101));
-        Pattern p = Pattern.compile(".*less.*100.*",Pattern.CASE_INSENSITIVE);
+        Pattern p = Pattern.compile(".*less.*100.*", Pattern.CASE_INSENSITIVE);
 
         assertTrue(p.matcher(e.getMessage()).matches(),"Illegal Argument Exception message for numbers greater than 100 does not match.");
     }
