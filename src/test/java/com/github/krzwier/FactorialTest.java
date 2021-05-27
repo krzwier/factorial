@@ -12,37 +12,45 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FactorialTest {
 
+    // helper function that transforms expected string into big integer and makes assertion
     void assertFactorialOfBigInteger(String expected, int input){
         BigInteger expectedBigInt = new BigInteger(expected);
         assertEquals(expectedBigInt, Factorial.GetFactorial(input));
     }
 
+    // helper function that transforms expected integer into string
     void assertFactorialOfBigInteger(int expected, int input){
         String s = String.valueOf(expected);
         assertFactorialOfBigInteger(s,input);
     }
 
     @Test
+    @DisplayName("It should return 120 when input is 5")
     void Factorial_Input5_Expected120() {
         assertFactorialOfBigInteger(120,5);
     }
 
     @Test
+    @DisplayName("It should return 1 when input is 1")
     void Factorial_Input1_Expected1() {
         assertFactorialOfBigInteger(1,1);
     }
 
     @Test
+    @DisplayName("It should return 40320 when input is 8")
     void Factorial_Input8_Expected40320() {
         assertFactorialOfBigInteger(40320,8);
     }
 
     @Test
+    @DisplayName("It should return 1 when input is 0"
+    )
     void Factorial_Input0_Expected1() {
         assertFactorialOfBigInteger(1,0);
     }
 
     @Test
+    @DisplayName("It should return correct BIG number when input is 100")
     void Factorial_Input100_ExpectedHuge() {
         assertFactorialOfBigInteger("9332621544394415268169923885626670049071596826438162146859"
             + "29638952175999932299156089414639761565182862536979208272237582511852109168640"
