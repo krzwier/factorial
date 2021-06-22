@@ -1,5 +1,6 @@
 .App {
     background-color: #282c34;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -7,20 +8,22 @@
     justify-content: center;
     color: white;
     text-align: center;
+    overflow: auto;
 }
 
 .App-logo {
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     pointer-events: none;
     background-color: teal;
     color: white;
     border-radius: 50%;
     font-family: 'Architects Daughter', cursive;
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 
 input {
@@ -30,28 +33,43 @@ input {
 }
 
 .App-header p {
+    margin: .75em 0;
     font-size: 2em;
 }
 
 .App-body {
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
 }
 
 button {
-    margin: 2em;
+    margin: 1em;
     border: 1px solid teal;
     background-color: teal;
     color: white;
     padding: 1em;
 }
 
+#answer {
+    width: 90vw;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    margin: .25em 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 button:hover {
     border: 1px solid white;
 }
 
-.App-link {
-  color: #61dafb;
+button:active {
+    transform: scale(0.98);
+}
+
+a {
+    color: teal;
 }
