@@ -1,0 +1,57 @@
+.App {
+    background-color: #282c34;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.App-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    pointer-events: none;
+    background-color: teal;
+    color: white;
+    border-radius: 50%;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 2.5em;
+}
+
+input {
+    border: none;
+    padding: 1em 2em;
+    text-align: center;
+}
+
+.App-header p {
+    font-size: 2em;
+}
+
+.App-body {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+}
+
+button {
+    margin: 2em;
+    border: 1px solid teal;
+    background-color: teal;
+    color: white;
+    padding: 1em;
+}
+
+button:hover {
+    border: 1px solid white;
+}
+
+.App-link {
+  color: #61dafb;
+}

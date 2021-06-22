@@ -1,22 +1,22 @@
 #
 # Standard Maven .gitignore
 #
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+backend/target/
+backend/pom.xml.tag
+backend/pom.xml.releaseBackup
+backend/pom.xml.versionsBackup
+backend/pom.xml.next
+backend/release.properties
+backend/dependency-reduced-pom.xml
+backend/buildNumber.properties
+
 
 #
-# IntelliJ
+# Frontend Node .gitignore
 #
-*.iml
-.idea/*
-!.idea/runConfigurations/
+frontend/node_modules
+frontend/package-lock.json
+frontend/coverage
 
 #
 # Visual Studio Code
@@ -26,3 +26,9 @@ buildNumber.properties
 .factorypath
 .project
 .vscode/
+
+
+#
+# Misc
+#
+.DS_Store
