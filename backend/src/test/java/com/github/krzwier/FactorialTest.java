@@ -60,7 +60,7 @@ class FactorialTest {
     @Test
     @DisplayName("It should throw exception when input is -1")
     void Factorial_InputNeg1_ThrowsException() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Factorial.GetFactorial(-1));
+        assertThrows(IllegalArgumentException.class, () -> Factorial.GetFactorial(-1));
     }
 
     @Test
@@ -76,7 +76,7 @@ class FactorialTest {
     @Test
     @DisplayName("It should throw exception when input is greater than 100")
     void Factorial_InputGreaterThan100_ThrowsException() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Factorial.GetFactorial(101));
+        assertThrows(IllegalArgumentException.class, () -> Factorial.GetFactorial(101));
     }
 
 
