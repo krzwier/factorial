@@ -1,22 +1,10 @@
-#
-# Standard Maven .gitignore
-#
-backend/target/
-backend/pom.xml.tag
-backend/pom.xml.releaseBackup
-backend/pom.xml.versionsBackup
-backend/pom.xml.next
-backend/release.properties
-backend/dependency-reduced-pom.xml
-backend/buildNumber.properties
-
 
 #
 # Frontend Node .gitignore
 #
-frontend/node_modules
-frontend/package-lock.json
-frontend/coverage
+node_modules
+package-lock.json
+coverage
 
 #
 # Visual Studio Code
