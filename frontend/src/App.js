@@ -22,6 +22,12 @@ const getFactorial = async (e) => {
 
 }
 
+const checkKey = async (e) => {
+    if (e.key === 'Enter') {
+        await getFactorial();
+    }
+}
+
 
 function App() {
 
@@ -36,7 +42,7 @@ function App() {
                 </p>
             </header>
             <div className="App-body">
-                <input type="text" className="number" placeholder="Enter a number" />
+                <input type="text" onKeyDown={checkKey} className="number" placeholder="Enter a number" />
                 <button onClick={getFactorial}>Get Factorial</button>
                 <p id="answer" data-testid="answer">&nbsp;</p>
             </div>

@@ -9,6 +9,11 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import org.hamcrest.Matchers;
+
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -55,9 +60,17 @@ public class FactorialControllerTest {
 
     @Test
     void FactorialController_InputHello_Returns400() throws Exception {
-        MvcResult result = mockmvc.perform(get("/api/factorial?input=hello")).andReturn();
-        int status = result.getResponse().getStatus();
-        assertEquals(400,status);
+        mockmvc.perform(get("/api/factorial?input=hello"))
+            .andExpect(status().isBadRequest())
+            .andExpect(content().string(Matchers.containsString("number")));
+    }
+
+    @Test
+    void FactorialController_InputNonInteger_Returns400() throws Exception {
+        mockmvc.perform(get("/api/factorial?input=3.03"))
+            .andExpect(status().isBadRequest())
+            .andExpect(content().string(Matchers.containsString("integer")));
+
     }
 
 
