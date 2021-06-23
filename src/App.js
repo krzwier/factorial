@@ -7,7 +7,7 @@ const getFactorial = async (e) => {
     if (num === "") {
         return;
     }
-    const url = `http://localhost:8080/api/factorial?input=${num}`;
+    const url = `https://factorial-factory.herokuapp.com/api/factorial?input=${num}`;
     const message = document.querySelector("#answer");
     let res;
     res = await fetch(url);
