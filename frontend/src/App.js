@@ -7,7 +7,7 @@ const getFactorial = async (e) => {
     if (num === "") {
         return;
     }
-    const url = `http://localhost:8080/api/factorial?input=${num}`;
+    const url = `https://factorial-factory.herokuapp.com/api/factorial?input=${num}`;
     const message = document.querySelector("#answer");
     let res;
     res = await fetch(url);
@@ -33,18 +33,23 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <div className="App-logo">
-                    <h1>n !</h1>
+            <div className="App-wrapper">
+                <header className="App-header">
+                    <div className="App-logo">
+                        <h1>n !</h1>
+                    </div>
+                    <p>
+                        Factorial
+                    </p>
+                </header>
+                <div className="App-body">
+                    <input type="text" onKeyDown={checkKey} className="number" placeholder="Enter a number" />
+                    <button onClick={getFactorial}>Get Factorial</button>
+                    <p id="answer" data-testid="answer">&nbsp;</p>
                 </div>
-                <p>
-                    Factorial
-                </p>
-            </header>
-            <div className="App-body">
-                <input type="text" onKeyDown={checkKey} className="number" placeholder="Enter a number" />
-                <button onClick={getFactorial}>Get Factorial</button>
-                <p id="answer" data-testid="answer">&nbsp;</p>
+                <div className="notice">
+                    <p>Please note: the back-end REST service for this app is hosted on a free server that sleeps between uses. It may take ~10 seconds for first response, but subsequent responses will be immediate.</p>
+                </div>
             </div>
         </div>
     );
